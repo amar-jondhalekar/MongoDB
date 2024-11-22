@@ -3,6 +3,9 @@ const app = express();
 const PORT = 3000;
 const connectDB = require('./db');
 
+// body parser 
+app.use(express.json());
+
 // connect to database 
 connectDB();
 
