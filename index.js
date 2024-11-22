@@ -6,12 +6,12 @@ const mongoose = require('mongoose');
 
 // Establish mongoose mongodb node.js connection
 
-const mongoose = async () => {
+const connectDB = async () => {
     try{
-        const conn = await mongoose.connect(`mongodb://loacalhost:27017/test`, {
+        const conn = await mongoose.connect(`mongodb+srv://amarjondhalekar221297:jYMGGazQCVRySIS5@cluster0.bazyj.mongodb.net/`, {
             useNewUrlParser:true,
         });
-        console.log(`MongoDB Connected: {conn.connection.host}`);
+        console.log(`MongoDB Connected`);
     } catch(error){
         console.error(error.message);
         process.exit(1);
