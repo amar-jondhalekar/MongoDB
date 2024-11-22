@@ -1,11 +1,15 @@
 // To import mongoose 
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+// load env configuration 
+dotenv.config();
 
 // Establish mongoose mongodb node.js connection
 
 const connectDB = async () => {
     try{
-        const conn = await mongoose.connect(`mongodb+srv://amarjondhalekar221297:jYMGGazQCVRySIS5@cluster0.bazyj.mongodb.net/`, {
+        const conn = await mongoose.connect(process.env.MONGODB_URI, {
             useNewUrlParser:true,
         });
         console.log(`MongoDB Connected`);
