@@ -21,3 +21,19 @@ router.get('/users', async(req, res) => {
         })
     }
 });
+
+// Create 
+
+router.post('/users', async(req, res) => {
+    try{
+        const {name, age, weight} = req.body;
+        const newUser = new User({name, age, weight});
+        await User.save(newUser);
+    }
+    catch(err){
+        res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+});
