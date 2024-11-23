@@ -18,3 +18,7 @@ const UserSchema = new Schema({
         default: Date.now,
     },
 });
+
+const UserModel = model("User", UserSchema)
+
+module.exports = UserModel //a
