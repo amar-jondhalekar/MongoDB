@@ -8,7 +8,9 @@ const PORT = 3000;
 // body parser 
 app.use(express.json());
 
-app.use(users);
+app.use('/api', users);
+
+// -> /api/users
 
 // connect to database 
 connectDB();
